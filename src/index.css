@@ -69,6 +69,13 @@ body {
   margin-bottom: 1rem;
 }
 
+.avatar-ques {
+  width: 12px 0;
+  height: 9em;
+  border-radius: 20%;
+  margin-bottom: 1rem;
+}
+
 .login-btn {
   background-color: rgb(38, 138, 38);
   color: white;
@@ -83,8 +90,14 @@ body {
 .navbar ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 0.4rem;
 }
 
 .navbar li:first-child {
@@ -112,6 +125,18 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+.tabs button {
+  width: 25%;
+  padding: 17px;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: bold;
+}
+
+.tabs button:hover {
+  cursor: pointer;
 }
 
 /* 

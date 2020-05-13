@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import QuestionCard from "./QuestionCard";
 
 export class Home extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class Home extends Component {
 
   handleClick = (e) => {
     e.target.value === "true"
-      ? this.setState({ answered: true })
+      ? this.setState(() => ({ answered: true }))
       : this.setState({ answered: false });
     console.log(this.state);
   };
@@ -23,7 +24,7 @@ export class Home extends Component {
     console.log(answeredQues, unansweredQues); //getting both types of question correctly DOne for today
 
     return (
-      <div>
+      <div className="center homeContainer">
         <div className="tabs">
           <button value="false" onClick={this.handleClick}>
             Unanswered Questions
@@ -31,6 +32,11 @@ export class Home extends Component {
           <button value="true" onClick={this.handleClick}>
             Answered Question
           </button>
+        </div>
+        <div className="questions">
+          {this.state.answered
+            ? answeredQues.map((id) => <QuestionCard key={id} id={id} />)
+            : unansweredQues.map((id) => <QuestionCard key={id} id={id} />)}
         </div>
       </div>
     );
