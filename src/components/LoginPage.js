@@ -36,7 +36,7 @@ export class Login extends Component {
             className="avatar"
             src={
               this.state.user === ""
-                ? "https://cdn2.iconfinder.com/data/icons/user-interface-essential-solid/32/Artboard_52-128.png"
+                ? "https://cdn1.iconfinder.com/data/icons/avatar-vol-9/512/3-128.png"
                 : users[this.state.user].avatarURL
             }
             alt="SelectUser"
