@@ -9,6 +9,7 @@ import NavBar from "./NavBar";
 import LeaderBoard from "./LeaderBoard";
 import CreateNewQuestion from "./CreateNewQuestion";
 import QuestionInfo from "./QuestionInfo";
+import QuestionResult from "./QuestionResult";
 
 export class App extends Component {
   componentDidMount() {
@@ -30,6 +31,11 @@ export class App extends Component {
                 <Route path="/leaderboard" component={LeaderBoard} />
                 <Route path="/new" component={CreateNewQuestion} />
                 <Route exact path="/question/:id" component={QuestionInfo} />
+                <Route
+                  exact
+                  path="/question/:id/result"
+                  component={QuestionResult}
+                />
               </>
             )}
           </Switch>

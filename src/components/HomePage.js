@@ -19,7 +19,7 @@ export class Home extends Component {
   };
 
   render() {
-    const { answeredQues, questions, unansweredQues } = this.props;
+    const { answeredQues, unansweredQues } = this.props;
 
     console.log(answeredQues, unansweredQues); //getting both types of question correctly DOne for today
 
@@ -35,8 +35,12 @@ export class Home extends Component {
         </div>
         <div className="questions">
           {this.state.answered
-            ? answeredQues.map((id) => <QuestionCard key={id} id={id} />)
-            : unansweredQues.map((id) => <QuestionCard key={id} id={id} />)}
+            ? answeredQues.map((id) => (
+                <QuestionCard key={id} id={id} answered="true" />
+              ))
+            : unansweredQues.map((id) => (
+                <QuestionCard key={id} id={id} answered="false" />
+              ))}
         </div>
       </div>
     );
