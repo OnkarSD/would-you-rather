@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 // import { formatQuestion } from "../utils/_DATA";
 import { Redirect } from "react-router-dom";
-import { addAnswerToQuestion } from "../actions/questions";
+import { handleSaveQuestionAnswer } from "../actions/users";
 
 export class QuestionInfo extends Component {
   constructor(props) {
@@ -22,7 +22,6 @@ export class QuestionInfo extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const authedUser = this.props.authedUser;
     let answer = this.state.optionChoosed;
     const { id } = this.props.question;
     const qid = id;
@@ -30,7 +29,7 @@ export class QuestionInfo extends Component {
     answer === this.props.question.optionOne.text
       ? (answer = "optionOne")
       : (answer = "optionTwo");
-    this.props.dispatch(addAnswerToQuestion(authedUser, qid, answer));
+    this.props.dispatch(handleSaveQuestionAnswer(qid, answer));
     this.setState(() => ({
       selectedOption: "",
       isSubmitted: true,
@@ -54,9 +53,9 @@ export class QuestionInfo extends Component {
               alt={`Avatar of ${user["name"]}`}
               className="avatar-ques"
             />
-            <div className="info">
+            <div>
               <h4>Would you Rather ...</h4>
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit} className="info">
                 <label htmlFor="optionOne">
                   <input
                     type="radio"
@@ -67,6 +66,7 @@ export class QuestionInfo extends Component {
                   />
                   {question["optionOne"]["text"]}
                 </label>
+                <br />
                 <label htmlFor="optionTwo">
                   <input
                     type="radio"
@@ -77,6 +77,7 @@ export class QuestionInfo extends Component {
                   />
                   {question["optionTwo"]["text"]}
                 </label>
+                <br />
                 <button type="submit" className="">
                   Vote Now
                 </button>

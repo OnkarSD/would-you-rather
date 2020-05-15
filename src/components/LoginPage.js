@@ -22,6 +22,7 @@ export class Login extends Component {
 
   handleChange = (e) => {
     this.setState({ user: e.target.value });
+    console.log(this.state.user);
   };
 
   render() {
@@ -49,7 +50,9 @@ export class Login extends Component {
               </option>
             ))}
           </select>
-          <button className="login-btn">LogIn</button>
+          <button className="login-btn" disabled={this.state.user === ""}>
+            LogIn
+          </button>
         </form>
       </div>
     );

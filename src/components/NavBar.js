@@ -30,9 +30,19 @@ export class NavBar extends Component {
           <li>
             <img src={this.props.avatarURL} alt="" className="nav-avatar" />
           </li>
-          <li>{this.props.authedUser}</li>
+          <li>Hello,{this.props.authedUser}</li>
           <li>
-            <button onClick={this.LogOutAction}>LOGOUT</button>
+            <button
+              onClick={this.LogOutAction}
+              style={{
+                padding: "10px",
+                border: "none",
+                backgroundColor: "red",
+                color: "white",
+              }}
+            >
+              LOGOUT
+            </button>
           </li>
         </ul>
       </nav>

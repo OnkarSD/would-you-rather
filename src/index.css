@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 15px;
-}
-
 .login-container {
   display: flex;
   flex-direction: column;
@@ -117,7 +112,7 @@ a {
   font-weight: bold;
 }
 
-.tabs button:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -126,10 +121,29 @@ a {
   flex-direction: row;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .info button {
   padding: 0.7rem;
   background-color: rgb(65, 120, 207);
   color: white;
   border: none;
   border-radius: 0.4rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.new-container input {
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.new-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
