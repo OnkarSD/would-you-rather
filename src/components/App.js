@@ -29,7 +29,7 @@ export class App extends Component {
                 <NavBar />
                 <Route path="/" exact component={Home} />
                 <Route path="/leaderboard" component={LeaderBoard} />
-                <Route path="/new" component={CreateNewQuestion} />
+                <Route path="/add" component={CreateNewQuestion} />
                 <Route exact path="/question/:id" component={QuestionInfo} />
                 <Route
                   exact

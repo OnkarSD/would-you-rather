@@ -15,13 +15,19 @@ export class Home extends Component {
     e.target.value === "true"
       ? this.setState(() => ({ answered: true }))
       : this.setState({ answered: false });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
-    const { answeredQues, unansweredQues } = this.props;
+    const { answeredQues, unansweredQues, questions } = this.props;
+    answeredQues.sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    );
+    unansweredQues.sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    );
 
-    console.log(answeredQues, unansweredQues); //getting both types of question correctly DOne for today
+    // console.log(answeredQues, unansweredQues); //getting both types of question correctly DOne for today
 
     return (
       <div className="center homeContainer">
@@ -53,6 +59,7 @@ function mapStateToProps({ authedUser, users, questions }) {
   const unansweredQues = Object.keys(questions).filter((id) => {
     return !answeredQues.includes(id) && id;
   });
+
   return {
     authedUser,
     answeredQues,

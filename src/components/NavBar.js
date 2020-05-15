@@ -18,7 +18,7 @@ export class NavBar extends Component {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/new" activeClassName="active">
+            <NavLink to="/add" activeClassName="active">
               NewPoll
             </NavLink>
           </li>

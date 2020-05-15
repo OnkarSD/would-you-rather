@@ -42,6 +42,7 @@ export class CreateNewQuestion extends Component {
     return (
       <div className="container">
         <h3>Create New Question</h3>
+        <h4>Would You Rather ?</h4>
         <form onSubmit={this.handleSubmit} className="new-container info">
           <input
             type="text"

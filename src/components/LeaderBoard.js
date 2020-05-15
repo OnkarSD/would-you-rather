@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 export class LeaderBoard extends Component {
   render() {
     const { users, usersScore } = this.props;
-    console.log(usersScore);
+    // console.log(usersScore);
     return (
       <div className="center">
         {usersScore.map((user) => (

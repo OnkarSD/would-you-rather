@@ -12,11 +12,11 @@ export class QuestionCard extends Component {
 
     const { id } = question;
     const { avatarURL } = user;
-    console.log(avatarURL);
+    // console.log(avatarURL);
     const answer = loggedUser["answers"][id]
       ? loggedUser["answers"][id]
       : "optionOne";
-    console.log(answer);
+    // console.log(answer);
     return (
       <div className="container">
         <h3>{`${user["name"]} asks:`}</h3>

@@ -22,7 +22,7 @@ export class Login extends Component {
 
   handleChange = (e) => {
     this.setState({ user: e.target.value });
-    console.log(this.state.user);
+    // console.log(this.state.user);
   };
 
   render() {
@@ -36,7 +36,7 @@ export class Login extends Component {
           <img
             className="avatar"
             src={
-              this.state.user === ""
+              this.state.user === "" || users[this.state.user] === undefined
                 ? "https://cdn1.iconfinder.com/data/icons/avatar-vol-9/512/3-128.png"
                 : users[this.state.user].avatarURL
             }
