@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { handleInitialData } from "../actions/shared";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./LoginPage";
+import LoginPage from "./LoginPage";
 import Home from "./HomePage";
 import "../index.css";
 import NavBar from "./NavBar";
@@ -10,6 +10,7 @@ import LeaderBoard from "./LeaderBoard";
 import CreateNewQuestion from "./CreateNewQuestion";
 import QuestionInfo from "./QuestionInfo";
 import QuestionResult from "./QuestionResult";
+import ErrorPage from "./ErrorPage";
 
 export class App extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ export class App extends Component {
         <div className="App">
           <Switch>
             {authedUser === null ? (
-              <Login />
+              <Route path="/" exact component={LoginPage} />
             ) : (
               <>
                 <NavBar />
@@ -38,6 +39,7 @@ export class App extends Component {
                 />
               </>
             )}
+            <Route component={ErrorPage} />
           </Switch>
         </div>
       </Router>
